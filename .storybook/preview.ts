@@ -1,5 +1,8 @@
 import type { Preview } from '@storybook/web-components-vite'
 
+import "../src/styles/themes/default.css"
+import "../src/styles/webawesome.css"
+
 const preview: Preview = {
   parameters: {
     controls: {
