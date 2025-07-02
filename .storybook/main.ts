@@ -14,6 +14,10 @@ const config: StorybookConfig = {
   "framework": {
     "name": "@storybook/web-components-vite",
     "options": {}
+  },
+  viteFinal: async (config) => {
+    config.base = process.env.PAGES_BASE_PATH || '/';
+    return config;
   }
 };
 export default config;
