@@ -18,7 +18,7 @@ type ButtonProps = {
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<ButtonProps> = {
   component: "wa-button",
-  title: "Example/Button",
+  title: "Components/Button",
   argTypes: {
     variant: {
       control: "radio",

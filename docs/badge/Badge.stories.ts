@@ -16,7 +16,7 @@ type BadgeProps = {
 
 const meta: Meta<BadgeProps> = {
   component: "wa-badge",
-  title: "Example/Badge",
+  title: "Components/Badge",
   argTypes: {
     variant: {
       control: "radio",
