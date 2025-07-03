@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "npm run build-lib && storybook build",
     "storybook-docs": "storybook dev --docs",
     "build-lib": "node scripts/build.js"
   },
