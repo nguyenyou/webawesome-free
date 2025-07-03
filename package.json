@@ -11,16 +11,34 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "npm run build-lib && storybook build",
     "storybook-docs": "storybook dev --docs",
-    "build-lib": "node scripts/build.js"
+    "build-lib": "node scripts/build.js",
+    "test": "CSR_ONLY=\"true\" web-test-runner --group default",
+    "test:component": "CSR_ONLY=\"true\" web-test-runner -- --watch --group",
+    "test:watch": "web-test-runner --watch --group default"
   },
   "dependencies": {
     "lit": "^3.3.0"
   },
   "devDependencies": {
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "@open-wc/testing": "^3.2.0",
+    "@lit/react": "^1.0.6",
+    "@web/test-runner": "^0.19.0",
+    "@web/dev-server-esbuild": "^0.3.6",
+    "@web/test-runner-commands": "^0.9.0",
+    "@web/test-runner-playwright": "^0.11.0",
+    "user-agent-data-types": "^0.4.2",
+    "@types/mocha": "^10.0.10",
     "@chromatic-com/storybook": "4.0.1",
+    "@lit-labs/testing": "^0.2.5",
     "@storybook/addon-a11y": "9.0.15",
     "@storybook/addon-docs": "9.0.15",
+    "browser-sync": "^2.29.3",
+    "esbuild": "0.23.1",
+    "esbuild-plugin-replace": "^1.4.0",
     "@storybook/addon-vitest": "9.0.15",
+    "get-port": "^7.1.0",
+    "recursive-copy": "^2.0.14",
     "@storybook/web-components-vite": "9.0.15",
     "@types/node": "24.0.10",
     "@vitest/browser": "^3.2.4",
@@ -32,12 +50,15 @@
     "vitest": "^3.2.4",
     "comment-parser": "^1.4.1",
     "pascal-case": "^3.1.2",
+    "globby": "^13.2.2",
     "@custom-elements-manifest/analyzer": "^0.10.4",
     "custom-element-jet-brains-integration": "^1.6.2",
     "custom-element-vs-code-integration": "^1.4.1",
     "custom-element-vuejs-integration": "^1.3.3",
     "del": "^7.1.0",
     "ora": "^8.1.1",
-    "chalk": "^5.3.0"
+    "chalk": "^5.3.0",
+    "@shoelace-style/localize": "^3.2.1",
+    "@11ty/eleventy": "3.0.0"
   }
 }

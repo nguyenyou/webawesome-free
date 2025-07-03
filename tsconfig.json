@@ -31,6 +31,10 @@
     "forceConsistentCasingInFileNames": true,
     "useUnknownInCatchVariables": true,
     "isolatedModules": true,
+    "types": [
+      "mocha",
+      "user-agent-data-types"
+    ]
   },
   "include": ["src"]
 }
