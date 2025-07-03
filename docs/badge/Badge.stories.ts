@@ -1,9 +1,9 @@
-import "./badge.js";
+import "../../src/components/badge/badge.js";
 import { html } from "lit";
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import { ifDefined } from "lit/directives/if-defined.js";
 
-import { getOptions, badgeManifest } from "../../../.storybook/manifest.js";
+import { getOptions, badgeManifest } from "../../.storybook/manifest.js";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 

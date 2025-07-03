@@ -1,8 +1,8 @@
-import "./button.js";
+import "../../src/components/button/button.js";
 import { html } from "lit";
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { getOptions, buttonManifest } from "../../../.storybook/manifest.js";
+import { getOptions, buttonManifest } from "../../.storybook/manifest.js";
 
 type ButtonProps = {
   variant: "brand" | "neutral" | "success" | "warning" | "danger";
