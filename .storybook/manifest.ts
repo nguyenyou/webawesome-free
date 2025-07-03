@@ -1,4 +1,4 @@
-import manifest from "../dist-cdn/custom-elements.json";
+import manifest from "../packages/webawesome/dist/custom-elements.json";
 
 export function getOptions(attributeName: any, componentManifest: any) {
   if (componentManifest && "attributes" in componentManifest) {

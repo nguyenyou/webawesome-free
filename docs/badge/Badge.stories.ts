@@ -1,4 +1,4 @@
-import "../../src/components/badge/badge.js";
+import "../../packages/webawesome/src/components/badge/badge.js";
 import { html } from "lit";
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import { ifDefined } from "lit/directives/if-defined.js";

@@ -3,21 +3,21 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "npm run build-lib && storybook build",
+    "build-storybook": "npm run build-lib --workspace=webawesome && storybook build",
     "storybook-docs": "storybook dev --docs",
     "build-lib": "node scripts/build.js",
     "test": "CSR_ONLY=\"true\" web-test-runner --group default",
     "test:component": "CSR_ONLY=\"true\" web-test-runner -- --watch --group",
     "test:watch": "web-test-runner --watch --group default"
-  },
-  "dependencies": {
-    "lit": "^3.3.0"
   },
   "devDependencies": {
     "prettier-plugin-organize-imports": "^4.1.0",

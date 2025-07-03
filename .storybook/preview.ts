@@ -1,10 +1,10 @@
 import type { Preview } from '@storybook/web-components-vite'
 import { setCustomElementsManifest } from '@storybook/web-components-vite';
 
-import "../src/styles/themes/default.css"
-import "../src/styles/webawesome.css"
+import "../packages/webawesome/src/styles/themes/default.css"
+import "../packages/webawesome/src/styles/webawesome.css"
 
-import customElements from "../dist-cdn/custom-elements.json";
+import customElements from "../packages/webawesome/dist/custom-elements.json";
 
 setCustomElementsManifest(customElements);
 
