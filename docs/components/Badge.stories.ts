@@ -1,38 +1,38 @@
-import "../../packages/webawesome/src/components/badge/badge.js";
-import { html } from "lit";
-import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import { ifDefined } from "lit/directives/if-defined.js";
+import type { Meta, StoryObj } from '@storybook/web-components-vite';
+import { html } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
-import { getOptions, badgeManifest } from "../../.storybook/manifest.js";
+import { badgeManifest, getOptions } from '../../.storybook/manifest.js';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 
 type BadgeProps = {
-  variant: "brand" | "neutral" | "success" | "warning" | "danger";
-  appearance: "accent" | "filled" | "outlined";
-  attention: "pulse" | "bounce" | "none";
+  variant: 'brand' | 'neutral' | 'success' | 'warning' | 'danger';
+  appearance: 'accent' | 'filled' | 'outlined';
+  attention: 'pulse' | 'bounce' | 'none';
   pill: boolean;
 };
 
 const meta: Meta<BadgeProps> = {
-  component: "wa-badge",
-  title: "Components/Badge",
+  component: 'wa-badge',
+  // title: 'Components/Badge',
+  tags: ['autodocs'],
   argTypes: {
     variant: {
-      control: "radio",
-      options: getOptions("variant", badgeManifest),
+      control: 'radio',
+      options: getOptions('variant', badgeManifest),
     },
     appearance: {
-      control: "radio",
-      options: getOptions("appearance", badgeManifest),
+      control: 'radio',
+      options: getOptions('appearance', badgeManifest),
     },
     attention: {
-      control: "radio",
-      options: getOptions("attention", badgeManifest),
+      control: 'radio',
+      options: getOptions('attention', badgeManifest),
     },
-    pill: { control: "boolean" },
+    pill: { control: 'boolean' },
   },
-  render: (args) => {
+  render: args => {
     return html`
       <wa-badge
         variant="${ifDefined(args.variant)}"
@@ -51,100 +51,82 @@ type Story = StoryObj<BadgeProps>;
 
 export const Primary: Story = {
   args: {
-    variant: "brand",
-    appearance: "accent",
-    attention: "none",
+    variant: 'brand',
+    appearance: 'accent',
+    attention: 'none',
     pill: false,
   },
 };
 
 export const Default = {};
 
+/**
+ * Set the `variant` attribute to change the badge's variant.
+ */
 export const Variants = () => {
   return html`
-    <wa-badge variant="brand" appearance="accent" attention="none"
-      >Badge</wa-badge
-    >
-    <wa-badge variant="neutral" appearance="accent" attention="none"
-      >Badge</wa-badge
-    >
-    <wa-badge variant="success" appearance="accent" attention="none"
-      >Badge</wa-badge
-    >
-    <wa-badge variant="warning" appearance="accent" attention="none"
-      >Badge</wa-badge
-    >
-    <wa-badge variant="danger" appearance="accent" attention="none"
-      >Badge</wa-badge
-    >
+    <wa-badge variant="brand" appearance="accent" attention="none">Badge</wa-badge>
+    <wa-badge variant="neutral" appearance="accent" attention="none">Badge</wa-badge>
+    <wa-badge variant="success" appearance="accent" attention="none">Badge</wa-badge>
+    <wa-badge variant="warning" appearance="accent" attention="none">Badge</wa-badge>
+    <wa-badge variant="danger" appearance="accent" attention="none">Badge</wa-badge>
   `;
 };
 
+/**
+ * Use the `appearance` attribute to change the badge's visual appearance.
+ */
 export const Appearances = () => {
   return html`
     <div style="margin-block-end: 1rem;">
       <wa-badge appearance="accent" variant="neutral">Accent</wa-badge>
-      <wa-badge appearance="filled outlined" variant="neutral"
-        >Filled + Outlined</wa-badge
-      >
+      <wa-badge appearance="filled outlined" variant="neutral">Filled + Outlined</wa-badge>
       <wa-badge appearance="filled" variant="neutral">Filled</wa-badge>
       <wa-badge appearance="outlined" variant="neutral">Outlined</wa-badge>
     </div>
     <div style="margin-block-end: 1rem;">
       <wa-badge appearance="accent" variant="brand">Accent</wa-badge>
-      <wa-badge appearance="filled outlined" variant="brand"
-        >Filled + Outlined</wa-badge
-      >
+      <wa-badge appearance="filled outlined" variant="brand">Filled + Outlined</wa-badge>
       <wa-badge appearance="filled" variant="brand">Filled</wa-badge>
       <wa-badge appearance="outlined" variant="brand">Outlined</wa-badge>
     </div>
     <div style="margin-block-end: 1rem;">
       <wa-badge appearance="accent" variant="success">Accent</wa-badge>
-      <wa-badge appearance="filled outlined" variant="success"
-        >Filled + Outlined</wa-badge
-      >
+      <wa-badge appearance="filled outlined" variant="success">Filled + Outlined</wa-badge>
       <wa-badge appearance="filled" variant="success">Filled</wa-badge>
       <wa-badge appearance="outlined" variant="success">Outlined</wa-badge>
     </div>
     <div style="margin-block-end: 1rem;">
       <wa-badge appearance="accent" variant="warning">Accent</wa-badge>
-      <wa-badge appearance="filled outlined" variant="warning"
-        >Filled + Outlined</wa-badge
-      >
+      <wa-badge appearance="filled outlined" variant="warning">Filled + Outlined</wa-badge>
       <wa-badge appearance="filled" variant="warning">Filled</wa-badge>
       <wa-badge appearance="outlined" variant="warning">Outlined</wa-badge>
     </div>
     <div>
       <wa-badge appearance="accent" variant="danger">Accent</wa-badge>
-      <wa-badge appearance="filled outlined" variant="danger"
-        >Filled + Outlined</wa-badge
-      >
+      <wa-badge appearance="filled outlined" variant="danger">Filled + Outlined</wa-badge>
       <wa-badge appearance="filled" variant="danger">Filled</wa-badge>
       <wa-badge appearance="outlined" variant="danger">Outlined</wa-badge>
     </div>
   `;
 };
 
+/**
+ * Badges are sized relative to the current font size. You can set `font-size` on any badge (or an ancestor element) to change it.
+ */
 export const Sizes = () => {
   return html`
-    <wa-badge variant="brand" style="font-size: var(--wa-font-size-xs);"
-      >Brand</wa-badge
-    >
-    <wa-badge variant="brand" style="font-size: var(--wa-font-size-s);"
-      >Brand</wa-badge
-    >
-    <wa-badge variant="brand" style="font-size: var(--wa-font-size-m);"
-      >Brand</wa-badge
-    >
-    <wa-badge variant="brand" style="font-size: var(--wa-font-size-l);"
-      >Brand</wa-badge
-    >
-    <wa-badge variant="brand" style="font-size: var(--wa-font-size-xl);"
-      >Brand</wa-badge
-    >
+    <wa-badge variant="brand" style="font-size: var(--wa-font-size-xs);">Brand</wa-badge>
+    <wa-badge variant="brand" style="font-size: var(--wa-font-size-s);">Brand</wa-badge>
+    <wa-badge variant="brand" style="font-size: var(--wa-font-size-m);">Brand</wa-badge>
+    <wa-badge variant="brand" style="font-size: var(--wa-font-size-l);">Brand</wa-badge>
+    <wa-badge variant="brand" style="font-size: var(--wa-font-size-xl);">Brand</wa-badge>
   `;
 };
 
+/**
+ * Use the `pill` attribute to give badges rounded edges.
+ */
 export const Pill = () => {
   return html`
     <wa-badge variant="brand" pill>Brand</wa-badge>
@@ -155,6 +137,9 @@ export const Pill = () => {
   `;
 };
 
+/**
+ * Use the `attention` attribute to draw attention to the badge with a subtle animation. Supported effects are `bounce`, `pulse` and `none`.
+ */
 export const DrawingAttention = () => {
   return html`
     <div class="badge-attention">
@@ -182,5 +167,28 @@ export const DrawingAttention = () => {
         }
       }
     </style>
+  `;
+};
+
+/**
+ * One of the most common use cases for badges is attaching them to buttons. 
+ * To make this easier, badges will be automatically positioned at the top-right when they're a child of a button.
+ */
+export const WithButtons = () => {
+  return html`
+    <wa-button>
+      Requests
+      <wa-badge pill>30</wa-badge>
+    </wa-button>
+
+    <wa-button style="margin-inline-start: 1rem;">
+      Warnings
+      <wa-badge variant="warning" pill>8</wa-badge>
+    </wa-button>
+
+    <wa-button style="margin-inline-start: 1rem;">
+      Errors
+      <wa-badge variant="danger" pill>6</wa-badge>
+    </wa-button>
   `;
 };

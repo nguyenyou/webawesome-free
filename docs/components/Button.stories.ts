@@ -19,6 +19,7 @@ type ButtonProps = {
 const meta: Meta<ButtonProps> = {
   component: "wa-button",
   title: "Components/Button",
+  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: "radio",
@@ -82,6 +83,9 @@ export const Default = () => {
   return html` <wa-button>Button</wa-button> `;
 };
 
+/**
+ * Use the `variant` attribute to set the button's semantic variant.
+ */
 export const Variants = () => {
   return html`
     <wa-button variant="brand">Brand</wa-button>
@@ -92,7 +96,10 @@ export const Variants = () => {
   `;
 };
 
-export const Appearances = () => {
+/**
+ * Use the `appearance` attribute to change the button's visual appearance.
+ */
+export const Appearance = () => {
   return html`
     <div class="wa-stack">
       <div class="wa-gap-2xs">
@@ -144,6 +151,9 @@ export const Appearances = () => {
   `;
 };
 
+/**
+ * Use the `size` attribute to change a button's size.
+ */
 export const Sizes = () => {
   return html`
     <wa-button size="small">Small</wa-button>
@@ -152,7 +162,10 @@ export const Sizes = () => {
   `;
 };
 
-export const Pill = () => {
+/**
+ * Use the `pill` attribute to give buttons rounded edges.
+ */
+export const PillButtons = () => {
   return html`
     <wa-button size="small" pill>Small</wa-button>
     <wa-button size="medium" pill>Medium</wa-button>
@@ -160,6 +173,11 @@ export const Pill = () => {
   `;
 };
 
+/**
+ * It's often helpful to have a button that works like a link. 
+ * This is possible by setting the `href` attribute, which will make the component render an `<a>` under the hood. 
+ * This gives you all the default link behavior the browser provides (e.g. [[CMD/CTRL/SHIFT]] + [[CLICK]]) and exposes the `rel`, `target`, and `download` attributes.
+ */
 export const LinkButtons = () => {
   return html`
     <wa-button href="https://example.com/">Link</wa-button>
@@ -172,6 +190,9 @@ export const LinkButtons = () => {
   `;
 };
 
+/**
+ * When only an [icon](/docs/components/icon) is slotted into the `label` slot, the button becomes an icon button. In this case, it's important to give the icon a label for users with assistive devices. Icon buttons can use any appearance or variant.
+ */
 export const IconButtons = () => {
   return html`
     <div class="wa-cluster">
@@ -191,7 +212,11 @@ export const IconButtons = () => {
   `;
 };
 
-export const CustomWidth = () => {
+/**
+ * As expected, buttons can be given a custom width by setting the `width` CSS property. 
+ * This is useful for making buttons span the full width of their container on smaller screens.
+ */
+export const SettingACustomWidth = () => {
   return html`
     <wa-button size="small" style="width: 100%; margin-bottom: 1rem;"
       >Small</wa-button
@@ -203,6 +228,9 @@ export const CustomWidth = () => {
   `;
 };
 
+/**
+ * Use the `start` and `end` slots to add presentational elements like `<wa-icon>` next to the button label.
+ */
 export const StartEndDecorations = () => {
   return html`
     <wa-button size="small">
@@ -259,6 +287,9 @@ export const StartEndDecorations = () => {
   `;
 };
 
+/**
+ * Use the `with-caret` attribute to add a dropdown indicator when a button will trigger a dropdown, menu, or popover.
+ */
 export const Caret = () => {
   return html`
     <wa-button size="small" with-caret>Small</wa-button>
@@ -267,6 +298,10 @@ export const Caret = () => {
   `;
 };
 
+/**
+ * Use the `loading` attribute to make a button busy. 
+ * The width will remain the same as before, preventing adjacent elements from moving around.
+ */
 export const Loading = () => {
   return html`
     <wa-button variant="brand" loading>Brand</wa-button>
@@ -277,6 +312,9 @@ export const Loading = () => {
   `;
 };
 
+/**
+ * Use the `disabled` attribute to disable a button.
+ */
 export const Disabled = () => {
   return html`
     <wa-button variant="brand" disabled>Brand</wa-button>
@@ -287,6 +325,11 @@ export const Disabled = () => {
   `;
 };
 
+/**
+ * This example demonstrates how to style buttons using a custom class. 
+ * This is the recommended approach if you need to add additional variations. 
+ * To customize an existing variation, modify the selector to target the button's `variant` attribute instead of a class (e.g. `wa-button[variant="brand"]`).
+ */
 export const StylingButtons = () => {
   return html`
     <wa-button class="pink">Pink Button</wa-button>
