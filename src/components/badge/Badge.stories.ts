@@ -1,7 +1,7 @@
 import "./badge.js";
 import { html } from "lit";
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import { ifDefined } from 'lit/directives/if-defined.js';
+import { ifDefined } from "lit/directives/if-defined.js";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 
@@ -17,19 +17,31 @@ const meta: Meta<BadgeProps> = {
   title: "Example/Badge",
   argTypes: {
     variant: {
-      control: "select",
+      control: "radio",
       options: ["brand", "neutral", "success", "warning", "danger"],
+      defaultValue: "brand",
     },
     appearance: {
-      control: "select",
+      control: "radio",
       options: ["accent", "filled", "outlined"],
+      defaultValue: "accent",
     },
-    attention: { control: "select", options: ["pulse", "bounce", "none"] },
-    pill: { control: "boolean" },
+    attention: {
+      control: "radio",
+      options: ["pulse", "bounce", "none"],
+      defaultValue: "none",
+    },
+    pill: { control: "boolean", defaultValue: false },
   },
   render: (args) => {
     return html`
-      <wa-badge variant="${ifDefined(args.variant)}" appearance="${ifDefined(args.appearance)}" attention="${ifDefined(args.attention)}" ?pill="${args.pill}">Badge</wa-badge>
+      <wa-badge
+        variant="${ifDefined(args.variant)}"
+        appearance="${ifDefined(args.appearance)}"
+        attention="${ifDefined(args.attention)}"
+        ?pill="${args.pill}"
+        >Badge</wa-badge
+      >
     `;
   },
 } satisfies Meta<BadgeProps>;
@@ -47,13 +59,7 @@ export const Primary: Story = {
   },
 };
 
-export const Default = () => {
-  return html`
-    <wa-badge variant="brand" appearance="accent" attention="none"
-      >Badge</wa-badge
-    >
-  `;
-};
+export const Default = {};
 
 export const Variants = () => {
   return html`
