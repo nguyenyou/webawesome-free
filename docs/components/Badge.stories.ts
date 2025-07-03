@@ -6,16 +6,9 @@ import { badgeManifest, getOptions } from '../../.storybook/manifest.js';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 
-type BadgeProps = {
-  variant: 'brand' | 'neutral' | 'success' | 'warning' | 'danger';
-  appearance: 'accent' | 'filled' | 'outlined';
-  attention: 'pulse' | 'bounce' | 'none';
-  pill: boolean;
-};
 
-const meta: Meta<BadgeProps> = {
+const meta: Meta = {
   component: 'wa-badge',
-  // title: 'Components/Badge',
   tags: ['autodocs'],
   argTypes: {
     variant: {
@@ -43,41 +36,32 @@ const meta: Meta<BadgeProps> = {
       >
     `;
   },
-} satisfies Meta<BadgeProps>;
+} satisfies Meta
 
 export default meta;
 
-type Story = StoryObj<BadgeProps>;
+type Story = StoryObj;
 
-export const Primary: Story = {
-  args: {
-    variant: 'brand',
-    appearance: 'accent',
-    attention: 'none',
-    pill: false,
-  },
-};
-
-export const Default = {};
+export const Default: Story = {};
 
 /**
  * Set the `variant` attribute to change the badge's variant.
  */
-export const Variants = () => {
-  return html`
+export const Variants: Story = {
+  render: () => html`
     <wa-badge variant="brand" appearance="accent" attention="none">Badge</wa-badge>
     <wa-badge variant="neutral" appearance="accent" attention="none">Badge</wa-badge>
     <wa-badge variant="success" appearance="accent" attention="none">Badge</wa-badge>
     <wa-badge variant="warning" appearance="accent" attention="none">Badge</wa-badge>
     <wa-badge variant="danger" appearance="accent" attention="none">Badge</wa-badge>
-  `;
+  `
 };
 
 /**
  * Use the `appearance` attribute to change the badge's visual appearance.
  */
-export const Appearances = () => {
-  return html`
+export const Appearances: Story = {
+  render: () => html`
     <div style="margin-block-end: 1rem;">
       <wa-badge appearance="accent" variant="neutral">Accent</wa-badge>
       <wa-badge appearance="filled outlined" variant="neutral">Filled + Outlined</wa-badge>
@@ -108,40 +92,40 @@ export const Appearances = () => {
       <wa-badge appearance="filled" variant="danger">Filled</wa-badge>
       <wa-badge appearance="outlined" variant="danger">Outlined</wa-badge>
     </div>
-  `;
+  `
 };
 
 /**
  * Badges are sized relative to the current font size. You can set `font-size` on any badge (or an ancestor element) to change it.
  */
-export const Sizes = () => {
-  return html`
+export const Sizes: Story = {
+  render: () => html`
     <wa-badge variant="brand" style="font-size: var(--wa-font-size-xs);">Brand</wa-badge>
     <wa-badge variant="brand" style="font-size: var(--wa-font-size-s);">Brand</wa-badge>
     <wa-badge variant="brand" style="font-size: var(--wa-font-size-m);">Brand</wa-badge>
     <wa-badge variant="brand" style="font-size: var(--wa-font-size-l);">Brand</wa-badge>
     <wa-badge variant="brand" style="font-size: var(--wa-font-size-xl);">Brand</wa-badge>
-  `;
+  `
 };
 
 /**
  * Use the `pill` attribute to give badges rounded edges.
  */
-export const Pill = () => {
-  return html`
+export const Pill: Story = {
+  render: () => html`
     <wa-badge variant="brand" pill>Brand</wa-badge>
     <wa-badge variant="success" pill>Success</wa-badge>
     <wa-badge variant="neutral" pill>Neutral</wa-badge>
     <wa-badge variant="warning" pill>Warning</wa-badge>
     <wa-badge variant="danger" pill>Danger</wa-badge>
-  `;
+  `
 };
 
 /**
  * Use the `attention` attribute to draw attention to the badge with a subtle animation. Supported effects are `bounce`, `pulse` and `none`.
  */
-export const DrawingAttention = () => {
-  return html`
+export const DrawingAttention: Story = {
+  render: () => html`
     <div class="badge-attention">
       <wa-badge variant="brand" attention="pulse" pill>1</wa-badge>
       <wa-badge variant="success" attention="pulse" pill>1</wa-badge>
@@ -167,15 +151,15 @@ export const DrawingAttention = () => {
         }
       }
     </style>
-  `;
+  `
 };
 
 /**
  * One of the most common use cases for badges is attaching them to buttons. 
  * To make this easier, badges will be automatically positioned at the top-right when they're a child of a button.
  */
-export const WithButtons = () => {
-  return html`
+export const WithButtons: Story = {
+  render: () => html`
     <wa-button>
       Requests
       <wa-badge pill>30</wa-badge>
@@ -190,5 +174,5 @@ export const WithButtons = () => {
       Errors
       <wa-badge variant="danger" pill>6</wa-badge>
     </wa-button>
-  `;
+  `
 };

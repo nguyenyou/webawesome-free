@@ -6,23 +6,28 @@ import { badgeManifest, getOptions } from '../../.storybook/manifest.js';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 
-type AvatarProps = {
-  
-};
-
-const meta: Meta<AvatarProps> = {
+/**
+ * By default, a generic icon will be shown. You can personalize avatars by adding custom icons, initials, and images. You should always provide a `label` for assistive devices.
+ */
+const meta: Meta = {
   component: 'wa-avatar',
   title: 'Components/Avatar',
   tags: ['autodocs'],
   argTypes: {
   },
-} satisfies Meta<AvatarProps>;
+} satisfies Meta;
 
 export default meta;
 
-type Story = StoryObj<AvatarProps>;
+type Story = StoryObj;
+
+export const Default: Story = {};
 
 /**
- * The Button component shows a button
+ * Use the `variant` attribute to change the avatar's variant.
  */
-export const Default = {};
+export const Variants: Story = {
+  render: () => html`
+    <wa-avatar variant="brand">Brand</wa-avatar>
+  `
+};
