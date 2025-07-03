@@ -26,6 +26,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "removeComments": false,
     "forceConsistentCasingInFileNames": true,
     "useUnknownInCatchVariables": true,

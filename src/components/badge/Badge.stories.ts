@@ -3,6 +3,8 @@ import { html } from "lit";
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+import { getOptions, badgeManifest } from "../../../.storybook/manifest.js";
+
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 
 type BadgeProps = {
@@ -18,20 +20,17 @@ const meta: Meta<BadgeProps> = {
   argTypes: {
     variant: {
       control: "radio",
-      options: ["brand", "neutral", "success", "warning", "danger"],
-      defaultValue: "brand",
+      options: getOptions("variant", badgeManifest),
     },
     appearance: {
       control: "radio",
-      options: ["accent", "filled", "outlined"],
-      defaultValue: "accent",
+      options: getOptions("appearance", badgeManifest),
     },
     attention: {
       control: "radio",
-      options: ["pulse", "bounce", "none"],
-      defaultValue: "none",
+      options: getOptions("attention", badgeManifest),
     },
-    pill: { control: "boolean", defaultValue: false },
+    pill: { control: "boolean" },
   },
   render: (args) => {
     return html`

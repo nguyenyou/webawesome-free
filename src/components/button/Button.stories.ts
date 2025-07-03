@@ -1,8 +1,8 @@
+import "./button.js";
 import { html } from "lit";
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import { ifDefined } from "lit/directives/if-defined.js";
-
-import "./button.js";
+import { getOptions, buttonManifest } from "../../../.storybook/manifest.js";
 
 type ButtonProps = {
   variant: "brand" | "neutral" | "success" | "warning" | "danger";
@@ -21,16 +21,16 @@ const meta: Meta<ButtonProps> = {
   title: "Example/Button",
   argTypes: {
     variant: {
-      control: "select",
-      options: ["brand", "neutral", "success", "warning", "danger"],
+      control: "radio",
+      options: getOptions("variant", buttonManifest),
     },
     appearance: {
-      control: "select",
-      options: ["accent", "filled", "outlined", "plain"],
+      control: "radio",
+      options: getOptions("appearance", buttonManifest),
     },
     size: {
-      control: "select",
-      options: ["small", "medium", "large"],
+      control: "radio",
+      options: getOptions("size", buttonManifest),
     },
     pill: {
       control: "boolean",
@@ -40,7 +40,7 @@ const meta: Meta<ButtonProps> = {
     },
     target: {
       control: "select",
-      options: ["_blank", "_parent", "_self", "_top"],
+      options: getOptions("target", buttonManifest),
     },
     download: {
       control: "text",
