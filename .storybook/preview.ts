@@ -23,7 +23,9 @@ import '../packages/webawesome/src/components/icon/icon.js';
 import '../packages/webawesome/src/components/input/input.js';
 import '../packages/webawesome/src/components/animation/animation.js';
 import '../packages/webawesome/src/components/animation/animations.js';
-
+import '../packages/webawesome/src/components/spinner/spinner.js';
+import '../packages/webawesome/src/components/split-panel/split-panel.js';
+import '../packages/webawesome/src/components/slider/slider.js';
 
 setCustomElementsManifest(customElements);
 
