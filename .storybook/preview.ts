@@ -26,6 +26,7 @@ import '../packages/webawesome/src/components/animation/animations.js';
 import '../packages/webawesome/src/components/spinner/spinner.js';
 import '../packages/webawesome/src/components/split-panel/split-panel.js';
 import '../packages/webawesome/src/components/slider/slider.js';
+import '../packages/webawesome/src/components/dialog/dialog.js';
 
 setCustomElementsManifest(customElements);
 
