@@ -1,40 +1,37 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "experimentalDecorators": true,
-    "useDefineForClassFields": false,
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+    "target": "es2017",
     "module": "NodeNext",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-
-    /* Bundler mode */
     "moduleResolution": "NodeNext",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
+    "lib": [
+      "dom",
+      "dom.Iterable",
+      "es2020"
+    ],
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "rootDir": ".",
+    "strict": true,
     "strictPropertyInitialization": false,
     "strictFunctionTypes": false,
     "noImplicitThis": false,
-    "noImplicitReturns": true,
-
-    /* Linting */
-    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
+    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false, /* See https://lit.dev/docs/components/properties/#avoiding-issues-with-class-fields */
     "removeComments": false,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "useUnknownInCatchVariables": true,
     "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "types": [
       "mocha",
       "user-agent-data-types"
     ]
-  },
-  "include": ["src"]
+  }
 }

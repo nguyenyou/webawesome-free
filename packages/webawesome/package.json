@@ -19,7 +19,8 @@
     "./dist/components": "./dist/components",
     "./dist/components/*": "./dist/components/*",
     "./dist/react": "./dist/react/index.js",
-    "./dist/react/*": "./dist/react/*"
+    "./dist/react/*": "./dist/react/*",
+    "./src/*": "./src/*"
   },
   "files": [
     "README.md",
