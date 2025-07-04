@@ -9,6 +9,7 @@ import { watch } from '../../internal/watch.js';
 import { WebAwesomeFormAssociatedElement } from '../../internal/webawesome-form-associated-element.js';
 import sizeStyles from '../../styles/utilities/size.css?inline';
 import variantStyles from '../../styles/utilities/variants.css?inline';
+import { LocalizeController } from '../../utilities/localize.js';
 import '../icon/icon.js';
 import '../spinner/spinner.js';
 import styles from './button.css?inline';
@@ -47,6 +48,7 @@ export default class WaButton extends WebAwesomeFormAssociatedElement {
 
   assumeInteractionOn = ['click'];
   private readonly hasSlotController = new HasSlotController(this, '[default]', 'start', 'end');
+  private readonly localize = new LocalizeController(this);
 
   @query('.button') button: HTMLButtonElement | HTMLLinkElement;
   @query('slot:not([name])') labelSlot: HTMLSlotElement;
@@ -246,6 +248,7 @@ export default class WaButton extends WebAwesomeFormAssociatedElement {
           caret: this.withCaret,
           disabled: this.disabled,
           loading: this.loading,
+          rtl: this.localize.dir() === 'rtl',
           'has-label': this.hasSlotController.test('[default]'),
           'has-start': this.hasSlotController.test('start'),
           'has-end': this.hasSlotController.test('end'),

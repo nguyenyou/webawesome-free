@@ -7,26 +7,8 @@ import "../packages/webawesome/src/styles/webawesome.css"
 
 import customElements from "../packages/webawesome/dist/custom-elements.json";
 
-// Components
-import '../packages/webawesome/src/components/avatar/avatar.js';
-import '../packages/webawesome/src/components/badge/badge.js';
-import '../packages/webawesome/src/components/button/button.js';
-import '../packages/webawesome/src/components/checkbox/checkbox.js';
-import '../packages/webawesome/src/components/popup/popup.js';
-import '../packages/webawesome/src/components/select/select.js';
-import '../packages/webawesome/src/components/slider/slider.js';
-import '../packages/webawesome/src/components/switch/switch.js';
-import '../packages/webawesome/src/components/option/option.js';
-import '../packages/webawesome/src/components/tag/tag.js';
-import '../packages/webawesome/src/components/tooltip/tooltip.js';
-import '../packages/webawesome/src/components/icon/icon.js';
-import '../packages/webawesome/src/components/input/input.js';
-import '../packages/webawesome/src/components/animation/animation.js';
-import '../packages/webawesome/src/components/animation/animations.js';
-import '../packages/webawesome/src/components/spinner/spinner.js';
-import '../packages/webawesome/src/components/split-panel/split-panel.js';
-import '../packages/webawesome/src/components/slider/slider.js';
-import '../packages/webawesome/src/components/dialog/dialog.js';
+// Components - Auto-import all components via barrel export
+import '../packages/webawesome/src/index.js';
 
 setCustomElementsManifest(customElements);
 

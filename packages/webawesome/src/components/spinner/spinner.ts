@@ -1,6 +1,7 @@
 import { html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import WebAwesomeElement from '../../internal/webawesome-element.js';
+import { LocalizeController } from '../../utilities/localize.js';
 import styles from './spinner.css?inline';
 
 /**
@@ -20,12 +21,14 @@ import styles from './spinner.css?inline';
 export default class WaSpinner extends WebAwesomeElement {
   static css = styles;
 
+  private readonly localize = new LocalizeController(this);
+
   render() {
     return html`
       <svg
         part="base"
         role="progressbar"
-        aria-label="loading"
+        aria-label=${this.localize.term('loading')}
         fill="none"
         viewBox="0 0 50 50"
         xmlns="http://www.w3.org/2000/svg"

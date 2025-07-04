@@ -7,10 +7,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "vite",
     "build": "npm run build-lib --workspace=webawesome",
     "typecheck": "tsc --noEmit",
-    "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "npm run build-lib --workspace=webawesome && storybook build",
     "storybook-docs": "storybook dev --docs",
