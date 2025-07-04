@@ -12,14 +12,12 @@ export function getOptions(attributeName: any, componentManifest: any) {
   return [];
 }
 
-export const buttonManifest = manifest.modules.find(
-  (m) => m.path === "components/button/button.js"
-)?.declarations.find(
-  (d) => d.name === "WaButton"
-);
+export function getManifest(componentName: string) {
+  return manifest.modules.find(
+    (m) => m.path === `components/${componentName}/${componentName.toLowerCase()}.js`
+  )?.declarations.find(
+    (d) => d.name === `Wa${componentName}`
+  );
+}
 
-export const badgeManifest = manifest.modules.find(
-  (m) => m.path === "components/badge/badge.js"
-)?.declarations.find(
-  (d) => d.name === "WaBadge"
-);
+

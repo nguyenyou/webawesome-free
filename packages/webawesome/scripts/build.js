@@ -56,7 +56,7 @@ export async function build(options = {}) {
       await generateReactWrappers();
       await generateTypes();
       await generateStyles();
-
+      await updateImportCss();
       // copy everything to unbundled before we generate bundles.
       await copy(getCdnDir(), getDistDir(), { overwrite: true });
 
@@ -162,6 +162,12 @@ export async function build(options = {}) {
     spinner.succeed();
 
     return Promise.resolve();
+  }
+
+  async function updateImportCss() {
+    spinner.start('Updating import css');
+    await execSync(`node ${join(__dirname, 'update-css-inline.js')}`);
+    spinner.succeed();
   }
 
   /**

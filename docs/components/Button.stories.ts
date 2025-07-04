@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/web-components-vite';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { buttonManifest, getOptions } from '../../.storybook/manifest.js';
+import { getManifest, getOptions } from '../../.storybook/manifest.js';
 import '../../packages/webawesome/src/components/button/button.js';
+
+const buttonManifest = getManifest("Button");
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta = {

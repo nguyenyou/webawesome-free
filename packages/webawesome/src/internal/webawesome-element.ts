@@ -28,9 +28,7 @@ export default class WebAwesomeElement extends LitElement {
    */
   static get styles(): CSSResultGroup {
     const styles = Array.isArray(this.css) ? this.css : this.css ? [this.css] : [];
-    const results = [hostStyles, ...styles].map(style => (typeof style === 'string' ? unsafeCSS(style) : style));
-    console.log('results', results);
-    return results;
+    return [hostStyles, ...styles].map(style => (typeof style === 'string' ? unsafeCSS(style) : style));
   }
 
   #hasRecordedInitialProperties = false;

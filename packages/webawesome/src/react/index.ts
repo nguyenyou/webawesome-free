@@ -1,4 +1,15 @@
+export { default as WaAnimation } from './animation/index.js';
 export { default as WaBadge } from './badge/index.js';
-export { default as WaButton } from './button/index.js';
+export { default as WaAvatar } from './avatar/index.js';
+export { default as WaCheckbox } from './checkbox/index.js';
 export { default as WaIcon } from './icon/index.js';
+export { default as WaInput } from './input/index.js';
+export { default as WaOption } from './option/index.js';
+export { default as WaButton } from './button/index.js';
+export { default as WaPopup } from './popup/index.js';
+export { default as WaSelect } from './select/index.js';
+export { default as WaSlider } from './slider/index.js';
+export { default as WaSwitch } from './switch/index.js';
 export { default as WaSpinner } from './spinner/index.js';
+export { default as WaTag } from './tag/index.js';
+export { default as WaTooltip } from './tooltip/index.js';
