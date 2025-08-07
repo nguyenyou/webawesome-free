@@ -4,6 +4,7 @@ import { setCustomElementsManifest } from '@storybook/web-components-vite';
 
 import "../packages/webawesome/src/styles/themes/default.css"
 import "../packages/webawesome/src/styles/webawesome.css"
+import "./custom.css"
 
 import customElements from "../packages/webawesome/dist/custom-elements.json";
 

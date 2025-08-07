@@ -1,0 +1,42 @@
+:root {
+  /* Font sizes use a ratio of 1.181 to scale sizes proportionally.
+      * For larger font sizes, each size is twice 1.181x larger to maximize impact.
+      * Each value uses `rem` units and is rounded to the nearest whole pixel when rendered. */
+  --wa-font-size-scale: 1;
+  --wa-font-size-2xs: round(calc(var(--wa-font-size-xs) / 1.181), 1px); /* 11px */
+  --wa-font-size-xs: round(calc(var(--wa-font-size-s) / 1.181), 1px); /* 12px */
+  --wa-font-size-s: round(calc(var(--wa-font-size-m) / 1.181), 1px); /* 11px */
+  --wa-font-size-m: calc(0.813rem * var(--wa-font-size-scale)); /* 13px */
+  --wa-font-size-l: round(calc(var(--wa-font-size-m) * 1.181 * 1.181), 1px); /* 20px */
+  --wa-font-size-xl: round(calc(var(--wa-font-size-l) * 1.181 * 1.181), 1px); /* 25px */
+  --wa-font-size-2xl: round(calc(var(--wa-font-size-xl) * 1.181 * 1.181), 1px); /* 32px */
+  --wa-font-size-3xl: round(calc(var(--wa-font-size-2xl) * 1.181 * 1.181), 1px); /* 41px */
+  --wa-font-size-4xl: round(calc(var(--wa-font-size-3xl) * 1.181 * 1.181), 1px); /* 52px */
+
+  --wa-font-size-smaller: round(calc(1em / 1.181), 1px);
+  --wa-font-size-larger: round(calc(1em * 1.181 * 1.181), 1px);
+
+  /* Colors */
+  --wa-color-red-50: #e32d2d;
+  --wa-color-yellow-50: #de990f;
+  --wa-color-green-50: #239e47;
+  --wa-color-blue-50: #1075dc;
+}
+
+[size='small'] {
+  --wa-font-size-s: 11px;
+  --wa-form-control-height: 24px;
+  --wa-form-control-padding-inline: 8px;
+}
+
+[size='medium'] {
+  --wa-font-size-m: 13px;
+  --wa-form-control-height: 32px;
+  --wa-form-control-padding-inline: 12px;
+}
+
+[size='large'] {
+  --wa-font-size-l: 15px;
+  --wa-form-control-height: 40px;
+  --wa-form-control-padding-inline: 20px;
+}
